@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
         borderLeftWidth: 2,
         borderBottomWidth: 2,
         borderColor: "#fff",
+        marginLeft: 10,
         transform: [{rotate: "45deg"}],
     }
 });

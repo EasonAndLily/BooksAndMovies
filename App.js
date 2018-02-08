@@ -11,6 +11,7 @@ import TabNavigator from 'react-native-tab-navigator';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Navigation from './views/common/navigation.js';
 import BookList from './views/book/book_list.js';
+import MovieList from './views/movie/movie_list.js';
 
 
 export default class App extends Component<{}> {
@@ -39,9 +40,8 @@ export default class App extends Component<{}> {
             renderIcon={()=><Icon name="file-movie-o" size={25} color="#617984"/>}
             renderSelectedIcon={()=><Icon name="file-movie-o" size={25} color="#4F8EF7"/>}
             onPress={() => this.setState({ selectedTab: 'movies' })}>
-            <View style={styles.movieTabPanel}>
-                  <Text>Profile</Text>
-            </View>
+            <Navigation component={MovieList}>
+            </Navigation>
           </TabNavigator.Item>
         </TabNavigator>
       </View>

@@ -9,7 +9,7 @@ import {
 
 import Header from './header.js';
 
-export default CustomWebView extends Component {
+export default class CustomWebView extends Component {
     render() {
         return (
             <View style={{backgroundColor: 'white', flex: 1}}>
