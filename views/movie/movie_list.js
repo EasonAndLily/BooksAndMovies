@@ -27,6 +27,20 @@ export default class MovieList extends Component {
             show: false,
             keywords: "加勒比海盗"
         };
+        this.renderRow = this.renderRow.bind(this);
+    }
+
+    showDetail(title, url) {
+        let detailRoute = {
+            component: MovieWebView,
+            passProps: {
+                backName: "电影",
+                title: title,
+                url: url
+            }
+        };
+
+        this.props.navigator.push(detailRoute);
     }
 
     getData() {
@@ -54,7 +68,7 @@ export default class MovieList extends Component {
     }
 
     renderRow(movie) {
-        return <MovieItem movie={movie}/>;
+        return <MovieItem movie={movie} onPress={this.showDetail.bind(this, movie.title, movie.alt)}/>;
     }
 
     changeText(text) {
